@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - release
+      - master
   workflow_dispatch:
 
 jobs:
@@ -36,4 +37,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact-${{ matrix.platform }}
-          path: ${{GITHUB_WORKSPACE}}/src-tauri/target # or path/to/artifact
+          path: ${{github.workspace}}/src-tauri/target # or path/to/artifact
